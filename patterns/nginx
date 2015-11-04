@@ -1,0 +1,3 @@
+NGUSERNAME [a-zA-Z\.\@\-\+_%]+
+NGUSER %{NGUSERNAME}
+NGINXACCESS %{IPORHOST:remote_addr} - - \[%{HTTPDATE:time_local}\] "%{WORD:method} %{URIPATH:path}(?:%{URIPARAM:param})? HTTP/%{NUMBER:httpversion}" %{INT:status} (?:%{NUMBER:bytes}|-) (?:"(?:%{URI:referrer}|-)"|%{QS:referrer}) %{QS:agent}
